@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Header";
+import { Fragment, useState } from "react";
+import FeedbackList from "./Components/FeedbackList";
+import FeedbackData from "./Components/FeedbackData";
 
 function App() {
+const [feedback, setFeedback] = useState(FeedbackData);
+const deleteHandler = (id) => {
+  if(window.confirm("Do you want to delete the item?")) {
+    setFeedback(feedback.filter((item) => item.id !== id))
+  }
+  
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Header />
+      <div className="container">
+        <FeedbackList feedback={feedback} deleteHandler={deleteHandler}/>
+      </div>
+    </Fragment>
   );
 }
 
