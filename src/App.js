@@ -2,6 +2,8 @@ import Header from "./Components/Header";
 import { Fragment, useState } from "react";
 import FeedbackList from "./Components/FeedbackList";
 import FeedbackData from "./Components/FeedbackData";
+import FeedbackStats from "./Components/FeedbackStats";
+import FeedbackForm from "./Components/FeedbackForm";
 
 function App() {
 const [feedback, setFeedback] = useState(FeedbackData);
@@ -16,6 +18,8 @@ const deleteHandler = (id) => {
     <Fragment>
       <Header />
       <div className="container">
+        <FeedbackForm />
+        <FeedbackStats feedback={feedback}/>
         <FeedbackList feedback={feedback} deleteHandler={deleteHandler}/>
       </div>
     </Fragment>
