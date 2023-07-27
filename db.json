@@ -3,17 +3,17 @@
         {
             "id": 1,
             "rating": 10,
-            "text": "This is feedback item 1 from server"
+            "review": "This is feedback item 1 from server"
         },
         {
             "id": 2,
-            "rating": 10,
-            "text": "This is feedback item 2 from server"
+            "rating": 7,
+            "review": "This is feedback item 2 from server"
         },
         {
             "id": 3,
             "rating": 10,
-            "text": "This is feedback item 3 from server"
+            "review": "This is feedback item 3 from server"
         }
     ]
 }
